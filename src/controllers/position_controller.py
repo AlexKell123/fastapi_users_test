@@ -1,8 +1,5 @@
-from repositories.repository import position_repository
-
-
-class PositionController:
-    def __init__(self, repository):
+class Controller:
+    def __init__(self, repository, notification, er_handler):
         self.repository = repository
 
     def create(self, title: str):
@@ -18,6 +15,3 @@ class PositionController:
 
     def delete(self, position_id: int):
         return self.repository.delete("position", position_id)
-
-
-position_controller = PositionController(position_repository)

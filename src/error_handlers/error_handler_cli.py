@@ -1,4 +1,3 @@
-
 class ErrorHandler:
     @staticmethod
     def not_found(item):
@@ -7,6 +6,3 @@ class ErrorHandler:
     @staticmethod
     def duplicate_found(field_name: str, value: str):
         return f"error 400 - {field_name} : '{value}' already exists"
-
-
-error_handler = ErrorHandler()

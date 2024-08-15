@@ -1,27 +1,4 @@
-from abc import ABC, abstractmethod
-from . import db
-from error_handlers import error_handler
-
-
-class AbstractRepository(ABC):
-    @abstractmethod
-    def create(self, model: str, data: dict):
-        pass
-
-    @abstractmethod
-    def read(self, model: str, item_id: int):
-        pass
-
-    @abstractmethod
-    def update(self, model: str, item_id: int, data: dict):
-        pass
-
-    @abstractmethod
-    def delete(self, model: str, item_id: int):
-        pass
-
-
-class Repository(AbstractRepository):
+class Repository:
     def __init__(self, database, er_handler):
         self.db = database
         self.error_handler = er_handler
@@ -53,7 +30,3 @@ class Repository(AbstractRepository):
 
     def check_duplicate(self, model: str, field_name: str, value: str, current_key=None):
         return self.db.check_duplicate(model, field_name, value, current_key)
-
-
-user_repository = Repository(db, error_handler)
-position_repository = Repository(db, error_handler)

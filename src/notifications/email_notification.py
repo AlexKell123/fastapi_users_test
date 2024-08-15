@@ -10,6 +10,3 @@ class Notification(ABC):
 class EmailNotification(Notification):
     def send(self, msg: str, address: str):
         print(f'Уведомление "{msg}" отправлено на адрес {address}')
-
-
-email_notification = EmailNotification()
