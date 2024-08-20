@@ -2,12 +2,11 @@ import sqlite3
 import threading
 
 
-class DB:
+class DBSqlite:
     def __init__(self, db_name):
+        self.type = 'DB_SQLITE'
         self.db_name = db_name
         self.thread_local = threading.local()
-        self.execute_query('''CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, full_name TEXT, email TEXT)''')
-        self.execute_query('''CREATE TABLE IF NOT EXISTS positions (id INTEGER PRIMARY KEY, title TEXT)''')
 
     def get_db_connection(self):
         if not hasattr(self.thread_local, "connection"):

@@ -1,8 +1,7 @@
 from fastapi import APIRouter
 
 
-def get_router(controller):
-
+def get_position_router(controller):
     router = APIRouter(prefix="/positions", tags=["positions"])
 
     @router.post("/")

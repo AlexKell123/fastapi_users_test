@@ -1,0 +1,3 @@
+from .db_redis import DBRedis
+from .user_repository_redis import UserRepositoryRedis
+from .position_repository_redis import PositionRepositoryRedis

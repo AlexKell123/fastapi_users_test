@@ -1,7 +1,7 @@
 from fastapi import HTTPException
 
 
-class ErrorHandler:
+class ErrorHandlerFastapi:
     def not_found(self, item):
         raise HTTPException(status_code=404, detail=f"{item} not found")
 

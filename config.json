@@ -1,0 +1,4 @@
+{
+  "DB_TYPE": "DB_REDIS",
+  "DB_CFG": ["localhost", 6379, 0]
+}

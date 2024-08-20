@@ -1,4 +1,4 @@
-class ErrorHandler:
+class ErrorHandlerCli:
     @staticmethod
     def not_found(item):
         return f'error 404 - {item} not found'
